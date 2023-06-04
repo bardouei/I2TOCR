@@ -11,7 +11,7 @@ import SwiftUI
 struct I2TORCApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SplashView()
         }
     }
 }
