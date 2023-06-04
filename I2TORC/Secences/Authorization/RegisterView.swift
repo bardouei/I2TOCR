@@ -17,37 +17,45 @@ struct RegisterView: View {
     @State private var isUserName: Bool = true
     
     @State private var isPresentingNextView = false
+    
     var body: some View {
-        VStack {
-            TextField("UserName", text: $userName)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
-            TextField("Email", text: $email)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
-            SecureField("Password", text: $password)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
-            
-            Button(action: {
-                // Perform user registration logic here
-                registerUser()
-            }) {
-                Text("Register")
-                    .foregroundColor(.white)
+        ZStack {
+            ColorfulView()
+            VStack {
+                TextField("UserName", text: $userName)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .font(.system(size: 14, weight: .bold))
                     .padding()
-                    .background(Color.blue)
-                    .cornerRadius(8)
+                TextField("Email", text: $email)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .font(.system(size: 14, weight: .bold))
+                    .padding()
+                SecureField("Password", text: $password)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .font(.system(size: 14, weight: .bold))
+                    .padding()
+                
+                Button(action: {
+                    registerUser()
+                }) {
+                    Text("Register")
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.blue)
+                        .cornerRadius(8)
+                        .font(.system(size: 20, weight: .bold))
+                }
             }
+            .padding()
         }
-        .padding()
+        .edgesIgnoringSafeArea(.all)
     }
     
    private func registerUser() {
         // Implement your user registration logic here
         print("Registering user with email: \(email), password: \(password), userName: \(userName)")
         
-        AuthService.registerUser(userName: userName, email: email, password: password) { result in
+        AuthService.registerUser(userName: userName, email: email, password: "password") { result in
             switch result {
             case .success:
                 // Registration successful
@@ -87,5 +95,11 @@ struct RegisterView: View {
     private func isValidPassword(_ password: String) -> Bool {
         // Simple password validation - at least 6 characters
         return password.count >= 6
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        RegisterView()
     }
 }

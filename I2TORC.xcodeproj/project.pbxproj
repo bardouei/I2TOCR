@@ -17,6 +17,13 @@
 		21B9DC692A2CB3A100EC033B /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9DC672A2CB3A100EC033B /* AuthService.swift */; };
 		21B9DC6C2A2CB5E700EC033B /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9DC6B2A2CB5E700EC033B /* SwiftUIView.swift */; };
 		21B9DC6D2A2CB5E700EC033B /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9DC6B2A2CB5E700EC033B /* SwiftUIView.swift */; };
+		21B9DC722A2CC7D400EC033B /* PointRandomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9DC6F2A2CC7D400EC033B /* PointRandomization.swift */; };
+		21B9DC732A2CC7D400EC033B /* ColorfulView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9DC702A2CC7D400EC033B /* ColorfulView.swift */; };
+		21B9DC742A2CC7D400EC033B /* Colorful.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9DC712A2CC7D400EC033B /* Colorful.swift */; };
+		21B9DC7E2A2CDDE400EC033B /* LottieComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9DC7D2A2CDDE400EC033B /* LottieComponent.swift */; };
+		21B9DC7F2A2CDDE400EC033B /* LottieComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9DC7D2A2CDDE400EC033B /* LottieComponent.swift */; };
+		21B9DC822A2CED0200EC033B /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9DC812A2CED0200EC033B /* NetworkConstants.swift */; };
+		21B9DC832A2CED0200EC033B /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9DC812A2CED0200EC033B /* NetworkConstants.swift */; };
 		21FD947C2A2C83D600016462 /* I2TORCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FD947B2A2C83D600016462 /* I2TORCApp.swift */; };
 		21FD947E2A2C83D600016462 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FD947D2A2C83D600016462 /* SplashView.swift */; };
 		21FD94802A2C83D800016462 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21FD947F2A2C83D800016462 /* Assets.xcassets */; };
@@ -51,6 +58,14 @@
 		21B9DC652A2CA5D000EC033B /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		21B9DC672A2CB3A100EC033B /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		21B9DC6B2A2CB5E700EC033B /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		21B9DC6F2A2CC7D400EC033B /* PointRandomization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointRandomization.swift; sourceTree = "<group>"; };
+		21B9DC702A2CC7D400EC033B /* ColorfulView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorfulView.swift; sourceTree = "<group>"; };
+		21B9DC712A2CC7D400EC033B /* Colorful.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colorful.swift; sourceTree = "<group>"; };
+		21B9DC772A2CD9EC00EC033B /* Aesthetic-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Aesthetic-Regular.otf"; sourceTree = "<group>"; };
+		21B9DC782A2CDA3900EC033B /* Queensha.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Queensha.ttf; sourceTree = "<group>"; };
+		21B9DC7B2A2CDB8800EC033B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		21B9DC7D2A2CDDE400EC033B /* LottieComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieComponent.swift; sourceTree = "<group>"; };
+		21B9DC812A2CED0200EC033B /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
 		21FD94782A2C83D600016462 /* I2TORC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = I2TORC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21FD947B2A2C83D600016462 /* I2TORCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = I2TORCApp.swift; sourceTree = "<group>"; };
 		21FD947D2A2C83D600016462 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
@@ -119,6 +134,8 @@
 		21B9DC5B2A2CA34700EC033B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				21B9DC752A2CD9BE00EC033B /* Fonts */,
+				21B9DC6E2A2CC7D400EC033B /* Colorful */,
 				21B9DC5C2A2CA35800EC033B /* LottieFiles */,
 			);
 			path = Resources;
@@ -127,10 +144,8 @@
 		21B9DC5C2A2CA35800EC033B /* LottieFiles */ = {
 			isa = PBXGroup;
 			children = (
-				21B9DC5F2A2CA36E00EC033B /* 4.json */,
-				21B9DC602A2CA36F00EC033B /* loading_Infnity.json */,
-				21B9DC5E2A2CA36E00EC033B /* loading_process.json */,
-				21B9DC5D2A2CA36E00EC033B /* splash.json */,
+				21B9DC7C2A2CDDBB00EC033B /* LottieJson */,
+				21B9DC7D2A2CDDE400EC033B /* LottieComponent.swift */,
 			);
 			path = LottieFiles;
 			sourceTree = "<group>";
@@ -141,6 +156,44 @@
 				21B9DC6B2A2CB5E700EC033B /* SwiftUIView.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		21B9DC6E2A2CC7D400EC033B /* Colorful */ = {
+			isa = PBXGroup;
+			children = (
+				21B9DC6F2A2CC7D400EC033B /* PointRandomization.swift */,
+				21B9DC702A2CC7D400EC033B /* ColorfulView.swift */,
+				21B9DC712A2CC7D400EC033B /* Colorful.swift */,
+			);
+			path = Colorful;
+			sourceTree = "<group>";
+		};
+		21B9DC752A2CD9BE00EC033B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				21B9DC782A2CDA3900EC033B /* Queensha.ttf */,
+				21B9DC772A2CD9EC00EC033B /* Aesthetic-Regular.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		21B9DC7C2A2CDDBB00EC033B /* LottieJson */ = {
+			isa = PBXGroup;
+			children = (
+				21B9DC5F2A2CA36E00EC033B /* 4.json */,
+				21B9DC602A2CA36F00EC033B /* loading_Infnity.json */,
+				21B9DC5E2A2CA36E00EC033B /* loading_process.json */,
+				21B9DC5D2A2CA36E00EC033B /* splash.json */,
+			);
+			path = LottieJson;
+			sourceTree = "<group>";
+		};
+		21B9DC802A2CECD600EC033B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				21B9DC812A2CED0200EC033B /* NetworkConstants.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		21FD946F2A2C83D600016462 = {
@@ -166,9 +219,11 @@
 		21FD947A2A2C83D600016462 /* I2TORC */ = {
 			isa = PBXGroup;
 			children = (
+				21B9DC7B2A2CDB8800EC033B /* Info.plist */,
 				21FD947B2A2C83D600016462 /* I2TORCApp.swift */,
 				21B9DC582A2CA32400EC033B /* Secences */,
 				21B9DC5B2A2CA34700EC033B /* Resources */,
+				21B9DC802A2CECD600EC033B /* Network */,
 				21FD947F2A2C83D800016462 /* Assets.xcassets */,
 				21FD94812A2C83D800016462 /* Preview Content */,
 			);
@@ -340,11 +395,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21B9DC7E2A2CDDE400EC033B /* LottieComponent.swift in Sources */,
 				21FD947E2A2C83D600016462 /* SplashView.swift in Sources */,
+				21B9DC822A2CED0200EC033B /* NetworkConstants.swift in Sources */,
 				21FD947C2A2C83D600016462 /* I2TORCApp.swift in Sources */,
 				21B9DC662A2CA5D000EC033B /* RegisterView.swift in Sources */,
 				21B9DC682A2CB3A100EC033B /* AuthService.swift in Sources */,
+				21B9DC732A2CC7D400EC033B /* ColorfulView.swift in Sources */,
+				21B9DC722A2CC7D400EC033B /* PointRandomization.swift in Sources */,
 				21B9DC6C2A2CB5E700EC033B /* SwiftUIView.swift in Sources */,
+				21B9DC742A2CC7D400EC033B /* Colorful.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,7 +412,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21B9DC7F2A2CDDE400EC033B /* LottieComponent.swift in Sources */,
 				21FD948D2A2C83D800016462 /* I2TORCTests.swift in Sources */,
+				21B9DC832A2CED0200EC033B /* NetworkConstants.swift in Sources */,
 				21B9DC692A2CB3A100EC033B /* AuthService.swift in Sources */,
 				21B9DC6D2A2CB5E700EC033B /* SwiftUIView.swift in Sources */,
 			);
@@ -508,6 +570,7 @@
 				DEVELOPMENT_TEAM = M252ZVWT5Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = I2TORC/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -537,6 +600,7 @@
 				DEVELOPMENT_TEAM = M252ZVWT5Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = I2TORC/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

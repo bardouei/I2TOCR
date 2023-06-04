@@ -9,7 +9,7 @@ import Foundation
 
 class AuthService {
     static func registerUser(userName: String, email: String, password: String, completion: @escaping (Result<Void, Error>) -> Void) {
-        guard let url = URL(string: "https://your-api-endpoint/register") else {
+        guard let url = URL(string: "http://170.130.165.71:3000/v1/auth/register") else {
             let error = NSError(domain: "Invalid URL", code: 0, userInfo: nil)
             completion(.failure(error))
             return
@@ -17,9 +17,11 @@ class AuthService {
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+//        request.httpBody = data
         
         let parameters: [String: Any] = [
-            "userName": userName,
+            "name": userName,
             "email": email,
             "password": password
         ]
@@ -30,7 +32,6 @@ class AuthService {
             completion(.failure(error))
             return
         }
-        
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let error = error {
                 completion(.failure(error))
@@ -39,7 +40,7 @@ class AuthService {
             
             // Check the HTTP status code and handle the response from the server as needed
             if let httpResponse = response as? HTTPURLResponse {
-                if httpResponse.statusCode == 200 {
+                if httpResponse.statusCode == 200 || httpResponse.statusCode == 201 {
                     completion(.success(()))
                 } else {
                     let error = NSError(domain: "Registration Failed", code: httpResponse.statusCode, userInfo: nil)
