@@ -8,6 +8,7 @@
 import SwiftUI
 import CryptoKit
 import AuthenticationServices
+import Firebase
 
 class LoginViewModel: ObservableObject {
     @Published var mobileNo: String = ""
@@ -32,7 +33,7 @@ class LoginViewModel: ObservableObject {
         Task {
             do {
                 // MARK: Disable it when testing with real Device
-                Auth.auth().setting?.isAppVerificationDisableForTesting = true
+                Auth.auth().settings.isAppVerificationDisableForTesting = true
                 
                 let code = try await PhoneAuthProvider.provider().verifyPhoneNumber("+\(mobileNo)", uiDelegate: nil)
                 await MainActor.run(body: {
@@ -41,7 +42,7 @@ class LoginViewModel: ObservableObject {
                     withAnimation(.easeInOut)(showOTPField = true)
                 })
             } catch {
-               await habdelError(error: error)
+               await handelError(error: error)
             }
         }
     }
@@ -50,7 +51,7 @@ class LoginViewModel: ObservableObject {
         UIApplication.shared.closeKeyboard()
         Task {
             do {
-                let cardential = PhoneAuthProvider.provider().credential(withVerficationID: CLIENT_CODE, verificationCode: otpCode)
+                let cardential = PhoneAuthProvider.provider().credential(withVerficationID: CLIENT_CODE, verificationCode: otpCode)
                 try await Auth.auth().sigIn(with: credential)
                 
                 // MARK: User Logged in Suuessfully
@@ -58,13 +59,13 @@ class LoginViewModel: ObservableObject {
                     withAnimation(.easeInOut){logStatus = true}
                 })
             } catch {
-                await handelError(error: error)
+                await handelError(error: error)
             }
         }
     }
     
     // MARK: Handel Error
-    func habdelError(error: Error) async {
+    func handelError(error: Error) async {
         await MainActor.run(body: {
             errorMessage = error.localizedDescription
             showError.toggle()
