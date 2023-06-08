@@ -38,6 +38,8 @@
 		21B9DC8B2A2CEE3A00EC033B /* ServerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9DC8A2A2CEE3A00EC033B /* ServerResponse.swift */; };
 		21B9DC8D2A2CEE4C00EC033B /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9DC8C2A2CEE4C00EC033B /* ApiClient.swift */; };
 		21B9DC942A2CF1CC00EC033B /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9DC932A2CF1CC00EC033B /* ApiRouter.swift */; };
+		21BF24802A327FE200AB937A /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 21BF247F2A327FE200AB937A /* GoogleSignIn */; };
+		21BF24822A327FE200AB937A /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 21BF24812A327FE200AB937A /* GoogleSignInSwift */; };
 		21EBBC522A3208BE00DE7944 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EBBC512A3208BE00DE7944 /* LoginView.swift */; };
 		21EBBC542A320B5800DE7944 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EBBC532A320B5800DE7944 /* CustomTextField.swift */; };
 		21EBBC562A320CB800DE7944 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EBBC552A320CB800DE7944 /* LoginViewModel.swift */; };
@@ -116,7 +118,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21BF24822A327FE200AB937A /* GoogleSignInSwift in Frameworks */,
 				21B9DC572A2CA2FF00EC033B /* Lottie in Frameworks */,
+				21BF24802A327FE200AB937A /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +398,8 @@
 			name = I2TORC;
 			packageProductDependencies = (
 				21B9DC562A2CA2FF00EC033B /* Lottie */,
+				21BF247F2A327FE200AB937A /* GoogleSignIn */,
+				21BF24812A327FE200AB937A /* GoogleSignInSwift */,
 			);
 			productName = I2TORC;
 			productReference = 21FD94782A2C83D600016462 /* I2TORC.app */;
@@ -469,6 +475,7 @@
 			mainGroup = 21FD946F2A2C83D600016462;
 			packageReferences = (
 				21B9DC552A2CA2FF00EC033B /* XCRemoteSwiftPackageReference "lottie-spm" */,
+				21BF247E2A327FE200AB937A /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
 			productRefGroup = 21FD94792A2C83D600016462 /* Products */;
 			projectDirPath = "";
@@ -883,6 +890,14 @@
 				minimumVersion = 4.0.0;
 			};
 		};
+		21BF247E2A327FE200AB937A /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -890,6 +905,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 21B9DC552A2CA2FF00EC033B /* XCRemoteSwiftPackageReference "lottie-spm" */;
 			productName = Lottie;
+		};
+		21BF247F2A327FE200AB937A /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 21BF247E2A327FE200AB937A /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		21BF24812A327FE200AB937A /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 21BF247E2A327FE200AB937A /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
