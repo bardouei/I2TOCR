@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import CryptoKit
+import AuthenticationServices
 
 @main
 struct I2TORCApp: App {
