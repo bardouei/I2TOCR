@@ -6,6 +6,13 @@
 //
 
 import Foundation
+import RxSwift
+
+class AuthService1 {
+    static func registerUser(userName: String, email: String, password: String) -> Observable<ObjectResponse<String>> {
+        return ApiClient.sharedInstance.requestObject(ApiRouter.configurations)
+    }
+}
 
 class AuthService {
     static func registerUser(userName: String, email: String, password: String, completion: @escaping (Result<Void, Error>) -> Void) {
