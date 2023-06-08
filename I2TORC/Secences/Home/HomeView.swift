@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State var selectedTab = "house"
+//    @State var selectedTab = "house"
     var body: some View {
-        VStack {
-            DataListView()
-            TabBarView()
-        }
-        .background(Color(uiColor: Colors.grayDark))
+        Color.red
+//        VStack {
+//            TabBarView()
+//        }
+//        .background(Color(uiColor: Colors.grayDark))
     }
 }
 

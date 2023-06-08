@@ -78,7 +78,7 @@ struct RegisterView: View {
                         .font(.system(size: 20, weight: .bold))
                 }
                 .fullScreenCover(isPresented: $isTabBarPresented) {
-                                TabBarView()
+//                                TabBarView()
                             }
 //                .sheet(isPresented: $isTabBarPresented) {
 //                    TabBarView()

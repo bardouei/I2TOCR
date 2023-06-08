@@ -5,12 +5,55 @@
 //  Created by sadegh bardouei on 6/8/23.
 //
 
-import Foundation
+import SwiftUI
 import UIKit
+
+// Enums
+enum Tab: Int, Identifiable, CaseIterable, Comparable {
+    static func < (lhs: Tab, rhs: Tab) -> Bool {
+        lhs.rawValue < rhs.rawValue
+    }
+    
+    case doc, camera, home
+    
+    internal var id: Int { rawValue }
+    
+    var icon: String {
+        switch self {
+        case .doc:
+            return "doc.fill"
+        case .camera:
+            return "bolt.fill"
+        case .home:
+            return "person.crop.circle.fill"
+        }
+    }
+    
+    var title: String {
+        switch self {
+        case .doc:
+            return "Home"
+        case .camera:
+            return "Doc"
+        case .home:
+            return "Account"
+        }
+    }
+    
+    var color: Color {
+        switch self {
+        case .doc:
+            return Color(uiColor: Colors.lightedBlue)
+        case .camera:
+            return Color(uiColor: Colors.lightedBlue)
+        case .home:
+            return Color(uiColor: Colors.lightedBlue)
+        }
+    }
+}
 
 // Colors
 struct Colors {
-    static let kidsSearchBar   = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1)
     static let white           = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     static let black           = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
     static let clear           = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
@@ -35,8 +78,8 @@ struct Colors {
     static let red             = #colorLiteral(red: 0.8509803922, green: 0.3607843137, blue: 0.3607843137, alpha: 1)
     static let darkRed         = #colorLiteral(red: 0.6705882353, green: 0.2823529412, blue: 0.2823529412, alpha: 1)
     
-    static let grayDark         = #colorLiteral(red: 0.1215686275, green: 0.1294117647, blue: 0.137254902, alpha: 1)
-    static let graylight        = #colorLiteral(red: 0.1882352941, green: 0.2117647059, blue: 0.2705882353, alpha: 1)
-    static let highlightedBlue2 = #colorLiteral(red: 0.2352941176, green: 0.4274509804, blue: 0.9607843137, alpha: 1)
-    static let blakDark         = #colorLiteral(red: 0.09411764706, green: 0.1019607843, blue: 0.1137254902, alpha: 1)
+    static let grayDark        = #colorLiteral(red: 0.1215686275, green: 0.1294117647, blue: 0.137254902, alpha: 1)
+    static let graylight       = #colorLiteral(red: 0.1882352941, green: 0.2117647059, blue: 0.2705882353, alpha: 1)
+    static let lightedBlue     = #colorLiteral(red: 0.2352941176, green: 0.4274509804, blue: 0.9607843137, alpha: 1)
+    static let blackDark       = #colorLiteral(red: 0.09411764706, green: 0.1019607843, blue: 0.1137254902, alpha: 1)
 }
