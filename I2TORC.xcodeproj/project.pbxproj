@@ -35,12 +35,12 @@
 		21B9DC7F2A2CDDE400EC033B /* LottieComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9DC7D2A2CDDE400EC033B /* LottieComponent.swift */; };
 		21B9DC822A2CED0200EC033B /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9DC812A2CED0200EC033B /* NetworkConstants.swift */; };
 		21B9DC832A2CED0200EC033B /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9DC812A2CED0200EC033B /* NetworkConstants.swift */; };
-		21B9DC872A2CEE0000EC033B /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 21B9DC862A2CEE0000EC033B /* RxCocoa */; };
-		21B9DC892A2CEE0000EC033B /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 21B9DC882A2CEE0000EC033B /* RxSwift */; };
 		21B9DC8B2A2CEE3A00EC033B /* ServerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9DC8A2A2CEE3A00EC033B /* ServerResponse.swift */; };
 		21B9DC8D2A2CEE4C00EC033B /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9DC8C2A2CEE4C00EC033B /* ApiClient.swift */; };
-		21B9DC902A2CEF3000EC033B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 21B9DC8F2A2CEF3000EC033B /* Alamofire */; };
 		21B9DC942A2CF1CC00EC033B /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B9DC932A2CF1CC00EC033B /* ApiRouter.swift */; };
+		21EBBC522A3208BE00DE7944 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EBBC512A3208BE00DE7944 /* LoginView.swift */; };
+		21EBBC542A320B5800DE7944 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EBBC532A320B5800DE7944 /* CustomTextField.swift */; };
+		21EBBC562A320CB800DE7944 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EBBC552A320CB800DE7944 /* LoginViewModel.swift */; };
 		21FD947C2A2C83D600016462 /* I2TORCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FD947B2A2C83D600016462 /* I2TORCApp.swift */; };
 		21FD947E2A2C83D600016462 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FD947D2A2C83D600016462 /* SplashView.swift */; };
 		21FD94802A2C83D800016462 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21FD947F2A2C83D800016462 /* Assets.xcassets */; };
@@ -96,6 +96,9 @@
 		21B9DC8A2A2CEE3A00EC033B /* ServerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerResponse.swift; sourceTree = "<group>"; };
 		21B9DC8C2A2CEE4C00EC033B /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		21B9DC932A2CF1CC00EC033B /* ApiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRouter.swift; sourceTree = "<group>"; };
+		21EBBC512A3208BE00DE7944 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		21EBBC532A320B5800DE7944 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		21EBBC552A320CB800DE7944 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		21FD94782A2C83D600016462 /* I2TORC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = I2TORC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21FD947B2A2C83D600016462 /* I2TORCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = I2TORCApp.swift; sourceTree = "<group>"; };
 		21FD947D2A2C83D600016462 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
@@ -113,9 +116,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21B9DC892A2CEE0000EC033B /* RxSwift in Frameworks */,
-				21B9DC902A2CEF3000EC033B /* Alamofire in Frameworks */,
-				21B9DC872A2CEE0000EC033B /* RxCocoa in Frameworks */,
 				21B9DC572A2CA2FF00EC033B /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,11 +145,14 @@
 			path = SingUp;
 			sourceTree = "<group>";
 		};
-		215F6C382A2F77F000B0135C /* SingIn */ = {
+		215F6C382A2F77F000B0135C /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				21EBBC512A3208BE00DE7944 /* LoginView.swift */,
+				21EBBC532A320B5800DE7944 /* CustomTextField.swift */,
+				21EBBC552A320CB800DE7944 /* LoginViewModel.swift */,
 			);
-			path = SingIn;
+			path = Login;
 			sourceTree = "<group>";
 		};
 		215F6C392A2F781A00B0135C /* Subscripsion */ = {
@@ -235,7 +238,7 @@
 		21B9DC5A2A2CA33700EC033B /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
-				215F6C382A2F77F000B0135C /* SingIn */,
+				215F6C382A2F77F000B0135C /* Login */,
 				215F6C372A2F77D900B0135C /* SingUp */,
 			);
 			path = Authorization;
@@ -391,9 +394,6 @@
 			name = I2TORC;
 			packageProductDependencies = (
 				21B9DC562A2CA2FF00EC033B /* Lottie */,
-				21B9DC862A2CEE0000EC033B /* RxCocoa */,
-				21B9DC882A2CEE0000EC033B /* RxSwift */,
-				21B9DC8F2A2CEF3000EC033B /* Alamofire */,
 			);
 			productName = I2TORC;
 			productReference = 21FD94782A2C83D600016462 /* I2TORC.app */;
@@ -469,8 +469,6 @@
 			mainGroup = 21FD946F2A2C83D600016462;
 			packageReferences = (
 				21B9DC552A2CA2FF00EC033B /* XCRemoteSwiftPackageReference "lottie-spm" */,
-				21B9DC852A2CEE0000EC033B /* XCRemoteSwiftPackageReference "RxSwift" */,
-				21B9DC8E2A2CEF3000EC033B /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 21FD94792A2C83D600016462 /* Products */;
 			projectDirPath = "";
@@ -524,8 +522,11 @@
 				217E72AD2A31F4950070215F /* SplashInteractor.swift in Sources */,
 				217E72A12A31F2860070215F /* CameraView.swift in Sources */,
 				217E72AF2A31F4B70070215F /* SplashEntity.swift in Sources */,
+				21EBBC522A3208BE00DE7944 /* LoginView.swift in Sources */,
 				21B9DC822A2CED0200EC033B /* NetworkConstants.swift in Sources */,
+				21EBBC562A320CB800DE7944 /* LoginViewModel.swift in Sources */,
 				21FD947C2A2C83D600016462 /* I2TORCApp.swift in Sources */,
+				21EBBC542A320B5800DE7944 /* CustomTextField.swift in Sources */,
 				217E72902A31CD9A0070215F /* Consts.swift in Sources */,
 				21B9DC662A2CA5D000EC033B /* RegisterView.swift in Sources */,
 				21B9DC682A2CB3A100EC033B /* AuthService.swift in Sources */,
@@ -632,7 +633,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -686,7 +687,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -882,22 +883,6 @@
 				minimumVersion = 4.0.0;
 			};
 		};
-		21B9DC852A2CEE0000EC033B /* XCRemoteSwiftPackageReference "RxSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
-			};
-		};
-		21B9DC8E2A2CEF3000EC033B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -905,21 +890,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 21B9DC552A2CA2FF00EC033B /* XCRemoteSwiftPackageReference "lottie-spm" */;
 			productName = Lottie;
-		};
-		21B9DC862A2CEE0000EC033B /* RxCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 21B9DC852A2CEE0000EC033B /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxCocoa;
-		};
-		21B9DC882A2CEE0000EC033B /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 21B9DC852A2CEE0000EC033B /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
-		};
-		21B9DC8F2A2CEF3000EC033B /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 21B9DC8E2A2CEF3000EC033B /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
