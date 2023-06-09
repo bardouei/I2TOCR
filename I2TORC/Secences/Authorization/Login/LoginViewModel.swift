@@ -9,6 +9,7 @@ import SwiftUI
 import CryptoKit
 import AuthenticationServices
 import Firebase
+import GoogleSignIn
 
 class LoginViewModel: ObservableObject {
     @Published var mobileNo: String = ""
@@ -33,13 +34,13 @@ class LoginViewModel: ObservableObject {
         Task {
             do {
                 // MARK: Disable it when testing with real Device
-                Auth.auth().settings.isAppVerificationDisableForTesting = true
+                Auth.auth().settings?.isAppVerificationDisabledForTesting = true
                 
                 let code = try await PhoneAuthProvider.provider().verifyPhoneNumber("+\(mobileNo)", uiDelegate: nil)
                 await MainActor.run(body: {
                     CLIENT_CODE = code
                     // MARK: Enabling OTP Firld When It's Success
-                    withAnimation(.easeInOut)(showOTPField = true)
+                    withAnimation(.easeInOut){showOTPField = true}
                 })
             } catch {
                await handelError(error: error)
@@ -51,8 +52,8 @@ class LoginViewModel: ObservableObject {
         UIApplication.shared.closeKeyboard()
         Task {
             do {
-                let cardential = PhoneAuthProvider.provider().credential(withVerficationID: CLIENT_CODE, verificationCode: otpCode)
-                try await Auth.auth().sigIn(with: credential)
+                let cardential = PhoneAuthProvider.provider().credential(withVerificationID: CLIENT_CODE, verificationCode: otpCode)
+                try await Auth.auth().signIn(with: cardential)
                 
                 // MARK: User Logged in Suuessfully
                 await MainActor.run(body: {
@@ -100,10 +101,29 @@ extension UIApplication {
     }
 }
 
+//MARK: Login Google User
+//func logGoogleUser(user: GIDGoogleUser) {
+//    Task {
+//        do {
+//            guard let idToken = user.authentication.idToken else { return }
+//            let accessToken = user.authentication.accessToken
+//            
+//            let credential = OAuthProvider.credential(withProviderID: idToken, accessToken: accessToken)
+//            
+//            print("Sucess Google")
+//            await MainActor.run(body: {
+//                withAnimation(.easeInOut){logStatus = true}
+//            })
+//        } catch {
+//            await handelError(error: error)
+//        }
+//    }
+//}
+
 
 // MARK: Apple Sign in Helper
 func sha256(_ input: String) -> String {
-    let inputData = Date(input.utf8)
+    let inputData = Data(input.utf8)
     let hashedData = SHA256.hash(data: inputData)
     let hashString = hashedData.compactMap {
         return String(format: "%02x", $0)
@@ -113,9 +133,8 @@ func sha256(_ input: String) -> String {
 
 func randomNonceString(length: Int = 32) -> String {
     precondition(length > 0)
-    let charset: Array<Character> =
-    Array("")
-    var result = ""
+    let charset: Array<Character> = Array("")
+    var result = "com.googleusercontent.apps.129480467221-k1k0asm46r3p1qa3ttkb0ncoorcjalcf"
     var remainingLength = length
     
     while remainingLength > 0 {
