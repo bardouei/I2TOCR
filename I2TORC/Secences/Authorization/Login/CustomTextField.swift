@@ -13,20 +13,24 @@ struct CustomTextField: View {
     
     // MARK: View Poperties
     @FocusState var isEnable: Bool
-    var contentType: UITextContentType = .telephoneNumber
+    var contentType: UITextContentType = .emailAddress
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 15) {
             TextField(hint, text:$text)
-                .keyboardType(.numberPad)
+                .keyboardType(.emailAddress)
                 .textContentType(contentType)
                 .focused($isEnable)
+                .placeholder(when: text.isEmpty) {
+                    Text(hint).foregroundColor(Color(uiColor: Colors.grey2))
+                }
             ZStack(alignment: .leading) {
                 Rectangle()
-                    .fill(.black.opacity(0.2))
+                    .fill(Color(uiColor: Colors.grey2).opacity(0.2))
                 
                 Rectangle()
-                    .fill(.black)
-                    .frame(width: isEnable ? nil : 0)
+                    .fill(.white)
+                    .frame(width: isEnable ? nil : 0, alignment: .leading)
                     .animation(.easeInOut(duration: 0.3), value: isEnable)
             }
             .frame(height: 2)
@@ -34,8 +38,15 @@ struct CustomTextField: View {
     }
 }
 
-struct CustomTextField_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginView()
+extension View {
+    func placeholder<Content: View>(
+        when shouldShow: Bool,
+        alignment: Alignment = .leading,
+        @ViewBuilder placeholder: () -> Content) -> some View {
+
+        ZStack(alignment: alignment) {
+            placeholder().opacity(shouldShow ? 1 : 0)
+            self
+        }
     }
 }

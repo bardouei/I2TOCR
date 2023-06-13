@@ -43,6 +43,7 @@
 		21BF24822A327FE200AB937A /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 21BF24812A327FE200AB937A /* GoogleSignInSwift */; };
 		21C37A2B2A328C4900B838A1 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 21C37A2A2A328C4900B838A1 /* FirebaseAuth */; };
 		21C37A2D2A33275000B838A1 /* CuntentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C37A2C2A33275000B838A1 /* CuntentView.swift */; };
+		21C37A992A33D08200B838A1 /* SingInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C37A982A33D08200B838A1 /* SingInView.swift */; };
 		21EBBC522A3208BE00DE7944 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EBBC512A3208BE00DE7944 /* LoginView.swift */; };
 		21EBBC542A320B5800DE7944 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EBBC532A320B5800DE7944 /* CustomTextField.swift */; };
 		21EBBC562A320CB800DE7944 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EBBC552A320CB800DE7944 /* LoginViewModel.swift */; };
@@ -103,6 +104,7 @@
 		21B9DC8C2A2CEE4C00EC033B /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		21B9DC932A2CF1CC00EC033B /* ApiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRouter.swift; sourceTree = "<group>"; };
 		21C37A2C2A33275000B838A1 /* CuntentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuntentView.swift; sourceTree = "<group>"; };
+		21C37A982A33D08200B838A1 /* SingInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingInView.swift; sourceTree = "<group>"; };
 		21EBBC512A3208BE00DE7944 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		21EBBC532A320B5800DE7944 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		21EBBC552A320CB800DE7944 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				21EBBC512A3208BE00DE7944 /* LoginView.swift */,
 				21EBBC532A320B5800DE7944 /* CustomTextField.swift */,
 				21EBBC552A320CB800DE7944 /* LoginViewModel.swift */,
+				21C37A982A33D08200B838A1 /* SingInView.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -171,13 +174,6 @@
 			children = (
 			);
 			path = Subscripsion;
-			sourceTree = "<group>";
-		};
-		215F6C3B2A2F787300B0135C /* DataProvider */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DataProvider;
 			sourceTree = "<group>";
 		};
 		215F6C3C2A2F789000B0135C /* Utility */ = {
@@ -211,13 +207,6 @@
 				217E72932A31E0690070215F /* PageViewController.swift */,
 			);
 			path = CustomTabbar;
-			sourceTree = "<group>";
-		};
-		217E72A52A31F42D0070215F /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entity;
 			sourceTree = "<group>";
 		};
 		21B9DC582A2CA32400EC033B /* Secences */ = {
@@ -352,9 +341,7 @@
 				21B9DC7B2A2CDB8800EC033B /* Info.plist */,
 				21FD947B2A2C83D600016462 /* I2TORCApp.swift */,
 				21B9DC582A2CA32400EC033B /* Secences */,
-				217E72A52A31F42D0070215F /* Entity */,
 				21B9DC5B2A2CA34700EC033B /* Resources */,
-				215F6C3B2A2F787300B0135C /* DataProvider */,
 				215F6C3C2A2F789000B0135C /* Utility */,
 				21B9DC802A2CECD600EC033B /* Network */,
 				21FD947F2A2C83D800016462 /* Assets.xcassets */,
@@ -540,6 +527,7 @@
 				217E72AD2A31F4950070215F /* SplashInteractor.swift in Sources */,
 				217E72A12A31F2860070215F /* CameraView.swift in Sources */,
 				217E72AF2A31F4B70070215F /* SplashEntity.swift in Sources */,
+				21C37A992A33D08200B838A1 /* SingInView.swift in Sources */,
 				21EBBC522A3208BE00DE7944 /* LoginView.swift in Sources */,
 				21B9DC822A2CED0200EC033B /* NetworkConstants.swift in Sources */,
 				21EBBC562A320CB800DE7944 /* LoginViewModel.swift in Sources */,
@@ -736,6 +724,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -769,6 +758,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
